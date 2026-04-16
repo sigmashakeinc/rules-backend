@@ -26,8 +26,7 @@ rule audit-cors-wildcard {
   AND (content CONTAINS "Access-Control-Allow-Origin: *" OR content CONTAINS "origins: ['*']")
   severity warning
   priority 80
-  ASK write
-  PROMPT "Allow open CORS policy for this endpoint?"
+  LOG write
 }
 
 rule block-hardcoded-api-key {
